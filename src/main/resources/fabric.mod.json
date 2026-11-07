@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "thunder_radar",
+  "version": "${version}",
+  "name": "Thunder Radar",
+  "description": "Estimativa estatística de tempestades vanilla. Apenas leitura; não altera o clima.",
+  "authors": ["OpenAI"],
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "br.thunderradar.client.ThunderRadarClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

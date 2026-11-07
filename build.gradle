@@ -1,0 +1,29 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.19-SNAPSHOT'
+}
+
+version = '1.0.0'
+group = 'br.thunderradar'
+base {
+    archivesName = 'thunder-radar'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:26.3'
+    implementation 'net.fabricmc:fabric-loader:0.20.1'
+    implementation 'net.fabricmc.fabric-api:fabric-api:0.165.0+26.3'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
