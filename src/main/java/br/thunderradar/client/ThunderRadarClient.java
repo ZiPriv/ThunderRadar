@@ -42,10 +42,9 @@ public final class ThunderRadarClient implements ClientModInitializer {
         boolean stormNow = weather.isRaining() && weather.isThundering();
 
         if (stormNow && !previousStorm) {
-            mc.gui.setOverlayMessage(
-                    Component.literal("§b[Thunder Radar] §fTEMPESTADE! Condutividade pode invocar raios."),
-                    false
-            );
+            mc.player.sendSystemMessage(
+        Component.literal("§b[Thunder Radar] §fTEMPESTADE! Condutividade pode invocar raios.")
+);
         }
         previousStorm = stormNow;
 
