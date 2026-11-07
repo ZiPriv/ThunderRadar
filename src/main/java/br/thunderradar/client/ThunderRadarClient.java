@@ -1,8 +1,8 @@
 package br.thunderradar.client;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.HudElementRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.VanillaHudElements;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -42,7 +42,7 @@ public final class ThunderRadarClient implements ClientModInitializer {
         boolean stormNow = weather.isRaining() && weather.isThundering();
 
         if (stormNow && !previousStorm) {
-            mc.player.displayClientMessage(
+            mc.gui.setOverlayMessage(
                     Component.literal("§b[Thunder Radar] §fTEMPESTADE! Condutividade pode invocar raios."),
                     false
             );
